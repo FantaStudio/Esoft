@@ -1,0 +1,55 @@
+﻿<main:EWindow  xmlns:main="clr-namespace:Esoft.UI.Main" x:Class="Esoft.Oauth"
+        Style="{StaticResource EWindow}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:inputs="clr-namespace:Esoft.UI.Inputs"
+        xmlns:buttons="clr-namespace:Esoft.UI.Buttons"
+        xmlns:local="clr-namespace:Esoft"
+        mc:Ignorable="d"
+        Height="600" Width="500" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="15">
+        <DockPanel LastChildFill="True">
+            <!-- head -->
+            <StackPanel DockPanel.Dock="Top">
+                <Image Source="Resources/images/logo.png" Width="120" Margin="0,30,0,10"/>
+                <Label  Content="Выберите тип пользователя" HorizontalAlignment="Center" Style="{DynamicResource Header}" FontSize="{StaticResource H3}" Foreground="{StaticResource Grey_5}"/>
+                <ListBox x:Name="UsersTypesMenu" DockPanel.Dock="Top" Height="40" Style="{DynamicResource Horizontal Selector}" Margin="0,0,0,20">
+                    <ListBoxItem x:Name="ClientItem" Grid.Column="0" Content="Клиент" Style="{StaticResource Selector Item}"/>
+                    <ListBoxItem x:Name="RieltorItem" Grid.Column="1" Content="Риэлтор" Style="{StaticResource Selector Item}"/>
+                </ListBox>
+            </StackPanel>
+            <!-- reg & auth -->
+            <StackPanel x:Name="FieldsPanel">
+                <Rectangle Style="{DynamicResource ESplitter}" Margin="0,0,0,10"/>
+                <Grid DockPanel.Dock="Bottom">
+                    <TabControl x:Name="OauthTab" Style="{DynamicResource Navigaton Tab}" Padding="10">
+                        <TabItem x:Name="LoginTabItem" Header="Авторизация" Style="{DynamicResource Navigation Tab Item}">
+                            <StackPanel x:Name="LoginPanel">
+                                <inputs:EInput x:Name="LoginLogin" PlaceHolder="Логин" Description="" Style="{DynamicResource Input Normal}"/>
+                                <inputs:EInput x:Name="LoginPassword" PlaceHolder="Пароль" Description="" Style="{DynamicResource Input Normal}"/>
+                                <buttons:EButton x:Name="EnterButton" Click="EnterButton_Click" Content="Войти" Style="{DynamicResource Primary Button}" />
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem x:Name="RegisterTabItem" Header="Регистрация" Style="{DynamicResource Navigation Tab Item}">
+                            <ScrollViewer VerticalScrollBarVisibility="Visible" Height="280">
+                                <StackPanel x:Name="RegisterPanel">
+                                    <inputs:EInput x:Name="RegisterLogin" PlaceHolder="Логин" Description="" Style="{DynamicResource Input Normal}"/>
+                                    <inputs:EInput x:Name="RegisterPassword" PlaceHolder="Пароль" Description="" Style="{DynamicResource Input Normal}"/>
+                                    <inputs:EInput x:Name="Name" PlaceHolder="Имя" Description="" Style="{DynamicResource Input Normal}"/>
+                                    <inputs:EInput x:Name="Surname" PlaceHolder="Фамилия" Description="" Style="{DynamicResource Input Normal}"/>
+                                    <inputs:EInput x:Name="Middlename" PlaceHolder="Отчество" Description="" Style="{DynamicResource Input Normal}"/>
+                                    <inputs:EInput x:Name="PhoneOrDealShareBox" PlaceHolder="Телефон" Description="Необязательное поле" Style="{DynamicResource Input Normal}"/>
+                                    <inputs:EInput x:Name="EmailBox" PlaceHolder="Почта" Style="{DynamicResource Input Normal}"/>
+                                    <buttons:EButton x:Name="RegistrationButton" Margin="15,15,15,30" Click="RegistrationButton_Click" Content="Зарегистрироваться" Style="{DynamicResource Primary Button}" />
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</main:EWindow>

@@ -1,0 +1,25 @@
+﻿<main:EUserWindow x:Class="Esoft.OfferAddEditWindow" xmlns:main="clr-namespace:Esoft.UI.Main"
+        Style="{StaticResource EWindow}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Esoft"
+        xmlns:inputs="clr-namespace:Esoft.UI.Inputs"
+        xmlns:buttons="clr-namespace:Esoft.UI.Buttons"
+        mc:Ignorable="d"
+        Title="Редактирование предложения" Height="531" Width="400">
+    <Grid>
+        <StackPanel Margin="10">
+            <Label x:Name="ObjectLabel" Content="Объект" HorizontalContentAlignment="Center" Style="{DynamicResource Paragraph}" Margin="0,0,0,-10" FontSize="{StaticResource H4}"/>
+            <ComboBox x:Name="ObjectBox" ToolTip="Объект, который участвует в предложении" Style="{DynamicResource EDropDown}"/>
+            <Label x:Name="ReiltorLabel" Content="Риэлтор" HorizontalContentAlignment="Center" Style="{DynamicResource Paragraph}" Margin="0,0,0,-10" FontSize="{StaticResource H4}"/>
+            <ComboBox x:Name="RieltorsBox" ToolTip="Риэлтор, который занимается поиском покупателя" Style="{DynamicResource EDropDown}"/>
+            <Label x:Name="ClientLabel" Content="Клиент" HorizontalContentAlignment="Center" Style="{DynamicResource Paragraph}" Margin="0,0,0,-10" FontSize="{StaticResource H4}"/>
+            <ComboBox x:Name="ClientsBox" Style="{DynamicResource EDropDown}"/>
+            <Label x:Name="PriceLabel" Content="Стоимость" HorizontalContentAlignment="Center" Style="{DynamicResource Paragraph}" Margin="0,0,0,-10" FontSize="{StaticResource H4}"/>
+            <inputs:EInput x:Name="PriceBox" PlaceHolder="Стоимость объекта" Style="{DynamicResource Input Normal}"/>
+            <buttons:EStatusButton x:Name="SaveButton" Click="SaveButton_Click" Margin="40,10,40,0" Content="Сохранить" Style="{DynamicResource Status Button}"/>
+        </StackPanel>
+    </Grid>
+</main:EUserWindow>

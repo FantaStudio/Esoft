@@ -1,0 +1,31 @@
+﻿<main:EUserWindow x:Class="Esoft.OfferWindow" xmlns:main="clr-namespace:Esoft.UI.Main"
+        Style="{StaticResource EWindow}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Esoft"
+        xmlns:buttons="clr-namespace:Esoft.UI.Buttons"
+        mc:Ignorable="d"
+        Title="Информация о предложении" Height="315" Width="616.925">
+    <StackPanel>
+        <Label x:Name="AddressLabel" Content="Адрес:" Style="{StaticResource Paragraph}"/>
+        <Label x:Name="TypeLabel" Content="Тип:" Style="{StaticResource Paragraph}"/>
+        <Label x:Name="PriceLabel" Content="Стоимость:" Style="{StaticResource Paragraph}"/>
+        <TextBlock>
+            <Label x:Name="RieltorLabel" Content="Риэлтор:" Style="{StaticResource Paragraph}"/>
+            <Hyperlink Click="RieltorLink_Click" Style="{StaticResource EHyperLink}" BaselineAlignment="Center"><Run x:Name="RieltorLink" Text=""/></Hyperlink>
+        </TextBlock>
+        <StackPanel x:Name="ToolBar">
+            <Rectangle Style="{DynamicResource ESplitter}" Margin="20,0,20,0"/>
+            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+                <buttons:EStatusButton Click="EditButton_Click" x:Name="EditButton" Content="Редактировать" Style="{DynamicResource Status Button}"/>
+                <buttons:EStatusButton Click="DeleteButton_Click" x:Name="DeleteButton" Margin="-5,0,0,0" Content="Удалить" EStatus="Danger" Style="{DynamicResource Status Button}"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="FindBar">
+            <Rectangle Style="{DynamicResource ESplitter}" Margin="20,0,20,0"/>
+            <buttons:EButton x:Name="FindDemandButton" HorizontalAlignment="Right" Content="Найти потребность" Style="{DynamicResource Primary Button}" Click="FindDemandButton_Click"/>
+        </StackPanel>
+    </StackPanel>
+</main:EUserWindow>

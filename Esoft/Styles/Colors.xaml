@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Esoft">
+    <SolidColorBrush x:Key="Blue_0">#04A0FF</SolidColorBrush>
+    <SolidColorBrush x:Key="Blue_1">#0091ea</SolidColorBrush>
+    <SolidColorBrush x:Key="Blue_2">#0081d1</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Green_0">#00d9bb</SolidColorBrush>
+    <SolidColorBrush x:Key="Green_1">#00bfa5</SolidColorBrush>
+    <SolidColorBrush x:Key="Green_2">#00a68f</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Red_0">#ff4a6d</SolidColorBrush>
+    <SolidColorBrush x:Key="Red_1">#ff1744</SolidColorBrush>
+    <SolidColorBrush x:Key="Red_2">#e3002c</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Yellow_0">#fff6a5</SolidColorBrush>
+    <SolidColorBrush x:Key="Yellow_1">#ffee58</SolidColorBrush>
+    <SolidColorBrush x:Key="Yellow_2">#ffe60c</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Orange_0">#ff9c1a</SolidColorBrush>
+    <SolidColorBrush x:Key="Orange_1">#ff9100</SolidColorBrush>
+    <SolidColorBrush x:Key="Orange_2">#e68300</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Grey_0">#f7f9f9</SolidColorBrush>
+    <SolidColorBrush x:Key="Grey_1">#eceff1</SolidColorBrush>
+    <SolidColorBrush x:Key="Grey_2">#cfd8dc</SolidColorBrush>
+    <SolidColorBrush x:Key="Grey_3">#b0bec5</SolidColorBrush>
+    <SolidColorBrush x:Key="Grey_4">#78909c</SolidColorBrush>
+    <SolidColorBrush x:Key="Grey_5">#546e7a</SolidColorBrush>
+    <SolidColorBrush x:Key="Grey_6">#37474f</SolidColorBrush>
+    <SolidColorBrush x:Key="Grey_7">#263238</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Text Primary">#37474f</SolidColorBrush>
+    <SolidColorBrush x:Key="Text Paragraph">#546e7a</SolidColorBrush>
+    <SolidColorBrush x:Key="Text Secondary">#78909c</SolidColorBrush>
+    <SolidColorBrush x:Key="Text Tetriary">#b0bec5</SolidColorBrush>
+</ResourceDictionary>

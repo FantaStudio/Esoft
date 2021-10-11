@@ -1,0 +1,31 @@
+﻿<Window x:Class="Esoft.Helpers.MessageHelper"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Esoft.Helpers"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:buttons="clr-namespace:Esoft.UI.Buttons"
+        mc:Ignorable="d"
+        Height="Auto" Background="Transparent"  Width="300" SizeToContent="Height" Icon="/Esoft;component/Resources/images/icon.ico" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True">
+    <Border Background="Transparent">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="10" ShadowDepth="0" Color="Black" Opacity="0.5"/>
+        </Border.Effect>
+        <Border Margin="5" Background="White">
+            <StackPanel>
+                <Grid Height="32" FlowDirection="RightToLeft">
+                    <materialDesign:PackIcon x:Name="CloseButton" Kind="Close" Width="32" Height="32"/>
+                </Grid>
+                <StackPanel Margin="20,0,20,10">
+                    <Image x:Name="ContentIcon" Source="/Esoft;component/Resources/images/alert.png" Width="80"/>
+                    <TextBlock x:Name="ContentText" Margin="0,20,0,10" TextWrapping="Wrap" TextAlignment="Center" FontSize="16" Foreground="{StaticResource Grey_6}" FontFamily="{StaticResource RobotoM}"/>
+                    <UniformGrid Columns="2" x:Name="ButtonsGrid">
+                        <buttons:EStatusButton x:Name="OkButton" Content="ОК" Style="{DynamicResource Status Button}" Margin="5"/>
+                        <buttons:EStatusButton x:Name="CancelButton" Content="Отмена" Style="{DynamicResource Status Button}" Margin="5" EStatus="Danger"/>
+                    </UniformGrid>
+                </StackPanel>
+        </StackPanel>
+        </Border>
+    </Border>
+</Window>

@@ -1,0 +1,89 @@
+﻿<main:EUserWindow  xmlns:main="clr-namespace:Esoft.UI.Main" x:Class="Esoft.MainMenu"
+        Style="{StaticResource EWindow}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Esoft"
+        xmlns:inputs="clr-namespace:Esoft.UI.Inputs"
+        xmlns:buttons="clr-namespace:Esoft.UI.Buttons" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:cards="clr-namespace:Esoft.UI.Cards"
+        mc:Ignorable="d"
+        Title="Меню" Height="500" Width="800">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!-- info panel -->
+        <StackPanel Grid.Row="0">
+            <Grid>
+                <DockPanel x:Name="InfoPanel" LastChildFill="False">
+                    <Image Source="Resources/images/logo.png" Width="100"/>
+                    <Label x:Name="LoginLabel" Style="{DynamicResource Paragraph}" Content="Ваш логин: Arti229" ToolTip="Логин под которым вы вошли в систему"/>
+                    <Label x:Name="TypeLabel" Style="{DynamicResource Paragraph}" Content="Вы вошли как: Клиент" ToolTip="Тип учетной записи под которой вы сейчас авторизированы"/>
+                    <buttons:EButton x:Name="ExitButton"  Padding="20,0,20,0" Margin="0" DockPanel.Dock="Right" Click="ExitButton_Click" Style="{DynamicResource Primary Button}" Content="Выход"  Grid.Column="1" ToolTip="Выход в меню авторизации"/>
+                    <buttons:EButton x:Name="ProfileButton" Padding="20,0,20,0" Margin="0,0,5,0" DockPanel.Dock="Right" Click="ProfileButton_Click" Style="{DynamicResource Primary Button}" Content="Профиль"  Grid.Column="1" ToolTip="Ваши личные данные"/>
+                </DockPanel>
+            </Grid>
+            <Rectangle Style="{DynamicResource ESplitter}"/>
+        </StackPanel>
+        <!-- main menu -->
+        <TabControl x:Name="MenuTab" Grid.Row="1" TabStripPlacement="Left" Margin="0,10,0,0" Style="{DynamicResource Navigaton Tab Vertical}" SelectionChanged="TabControl_SelectionChanged">
+            <!-- objects -->
+            <TabItem x:Name="ClientObjects" Header="Недвижимость" Style="{DynamicResource Navigation Tab Item Vertical}">
+                <Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged">
+                        <StackPanel Margin="5">
+                            <WrapPanel x:Name="objectsList"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <StackPanel Visibility="Collapsed" x:Name="stackSearchFilter"  Margin = "10,0,25,0" Height="80" VerticalAlignment="Top" Style="{DynamicResource StackSearchFilter}">
+                        <Label Content="Выберите район" Style="{DynamicResource Paragraph}"/>
+                        <ComboBox x:Name="DistrictsBox" Style="{DynamicResource EDropDown}" Width="200" Margin="10" SelectionChanged="DistrictsBox_SelectionChanged"/>
+                        <StackPanel.Effect>
+                            <DropShadowEffect Color="Black" Direction="270" ShadowDepth="3" Opacity="0.4"/>
+                        </StackPanel.Effect>
+                    </StackPanel>
+                    <Button x:Name="addObjectButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,15,0" Content="{materialDesign:PackIcon Plus}" ToolTip="Добавить объект" Style="{DynamicResource Floating Button}" Click="AddObjectButton_Click"/>
+                    <Button x:Name="filterObjectButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,15,60" Content="{materialDesign:PackIcon Search}" ToolTip="Фильтр поиска" Style="{DynamicResource Floating Button}" Click="FilterObjectButton_Click"/>
+                </Grid>
+            </TabItem>
+            <!-- offers -->
+            <TabItem x:Name="ClientOffers" Header="Предложения" Style="{DynamicResource Navigation Tab Item Vertical}">
+                <Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged">
+                        <StackPanel Margin="5">
+                            <WrapPanel x:Name="offersList"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <Button x:Name="addOfferButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,15,0" Content="{materialDesign:PackIcon Plus}" ToolTip="Добавить предложение" Style="{DynamicResource Floating Button}" Click="AddOfferButton_Click"/>
+                </Grid>
+            </TabItem>
+            <!-- demands -->
+            <TabItem x:Name="ClientDemands" Header="Потребности" Style="{DynamicResource Navigation Tab Item Vertical}">
+                <Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged">
+                        <StackPanel Margin="5">
+                            <WrapPanel x:Name="demandsList"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <Button x:Name="addDemandButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,15,0" Content="{materialDesign:PackIcon Plus}" ToolTip="Добавить потребность" Style="{DynamicResource Floating Button}" Click="AddDemandButton_Click"/>
+                </Grid>
+            </TabItem>
+            <!-- deals -->
+            <TabItem x:Name="DealsItem" Header="Сделки" Style="{DynamicResource Navigation Tab Item Vertical}">
+                <Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged">
+                        <StackPanel Margin="5">
+                            <WrapPanel x:Name="dealsList"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <Button x:Name="addDealButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,15,0" Content="{materialDesign:PackIcon Plus}" ToolTip="Добавить сделку" Style="{DynamicResource Floating Button}" Click="AddDealButton_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</main:EUserWindow>
+

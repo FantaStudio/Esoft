@@ -1,0 +1,39 @@
+﻿<main:EUserWindow x:Class="Esoft.DealsWindow" xmlns:main="clr-namespace:Esoft.UI.Main"
+        Style="{StaticResource EWindow}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Esoft"
+        xmlns:buttons="clr-namespace:Esoft.UI.Buttons"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Информация о сделке" Height="648" Width="616.925">
+    <StackPanel>
+        <TextBlock>
+            <Label x:Name="OfferLabel" Content="Предложение:" Style="{StaticResource Paragraph}"/>
+            <Hyperlink Click="OfferLink_Click" Style="{StaticResource EHyperLink}" BaselineAlignment="Center"><Run x:Name="OfferLink" Text="Подробнее"/></Hyperlink>
+        </TextBlock>
+        <TextBlock>
+            <Label x:Name="DemandLabel" Content="Потребность:" Style="{StaticResource Paragraph}"/>
+            <Hyperlink Click="DemandLink_Click" Style="{StaticResource EHyperLink}" BaselineAlignment="Center"><Run x:Name="DemandLink" Text="Подробнее"/></Hyperlink>
+        </TextBlock>
+
+        <Label x:Name="ServicePriceLabel" Content="Стоимость услуг" FontWeight="SemiBold"  HorizontalAlignment="Center" FontSize="16" Margin="0"/>
+        <Label x:Name="ClientSellerServicePrice" Style="{StaticResource Paragraph}" Content="Клиента-продавца: "/>
+        <Label x:Name="ClientBuyerSercivePrice" Style="{StaticResource Paragraph}" Content="Клиента-покупателя: "/>
+
+        <Label x:Name="DeudctionLabel" Content="Отчисления" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="16" Margin="0"/>
+        <Label x:Name="RieltorSellerDeduction" Style="{StaticResource Paragraph}" Content="Клиента-продавца: "/>
+        <Label x:Name="RieltorBuyerDeduction" Style="{StaticResource Paragraph}" Content="Клиента-покупателя: "/>
+        <Label x:Name="CompanyDeduction" Style="{StaticResource Paragraph}" Content="Компании: "/>
+        
+        <StackPanel x:Name="ToolBar">
+            <Rectangle Style="{DynamicResource ESplitter}" Margin="20,0,20,0"/>
+            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+                <buttons:EStatusButton Click="EditButton_Click" x:Name="EditButton" Content="Редактировать" Style="{DynamicResource Status Button}"/>
+                <buttons:EStatusButton Click="DeleteButton_Click" x:Name="DeleteButton" Margin="-5,0,0,0" Content="Удалить" EStatus="Danger" Style="{DynamicResource Status Button}"/>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</main:EUserWindow>

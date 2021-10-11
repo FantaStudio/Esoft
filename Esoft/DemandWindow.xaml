@@ -1,0 +1,62 @@
+﻿<main:EUserWindow x:Class="Esoft.DemandWindow" xmlns:main="clr-namespace:Esoft.UI.Main"
+        Style="{StaticResource EWindow}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Esoft"
+        xmlns:buttons="clr-namespace:Esoft.UI.Buttons"
+        mc:Ignorable="d"
+        Title="Информация о потребности" Height="596" Width="616.925">
+    <StackPanel>
+        <Label x:Name="TypeLabel" Content="Тип:" Style="{StaticResource Paragraph}"/>
+        <TextBlock>
+            <Label x:Name="RieltorLabel" Content="Риэлтор:" Style="{StaticResource Paragraph}"/>
+            <Hyperlink Click="RieltorLink_Click" Style="{StaticResource EHyperLink}" BaselineAlignment="Center"><Run x:Name="RieltorLink" Text=""/></Hyperlink>
+        </TextBlock>
+        <TextBlock>
+            <Label x:Name="ClientLabel" Content="Клиент:" Style="{StaticResource Paragraph}"/>
+            <Hyperlink Click="ClientLink_Click" Style="{StaticResource EHyperLink}" BaselineAlignment="Center"><Run x:Name="ClientLink" Text=""/></Hyperlink>
+        </TextBlock>
+        <Label x:Name="AddressLabel" Content="Адрес:" Style="{StaticResource Paragraph}"/>
+        <TextBlock>
+            <Label Content="Стоимость" Style="{StaticResource Paragraph}"/>
+            <UniformGrid Columns="2" Rows="1">
+                <Label x:Name="MinPriceLabel" Content="Мин: 500" Style="{StaticResource Paragraph}"/>
+                <Label x:Name="MaxPriceLabel" Content="Макс: 500" Style="{StaticResource Paragraph}"/>
+            </UniformGrid>
+        </TextBlock>
+        <TextBlock>
+            <Label Content="Площадь" Style="{StaticResource Paragraph}"/>
+            <UniformGrid Columns="2" Rows="1">
+                <Label x:Name="MinSquareLabel" Content="Мин: 500" Style="{StaticResource Paragraph}"/>
+                <Label x:Name="MaxSquareLabel" Content="Макс: 500" Style="{StaticResource Paragraph}"/>
+            </UniformGrid>
+        </TextBlock>
+        <TextBlock>
+            <Label Content="Комнаты" Style="{StaticResource Paragraph}"/>
+            <UniformGrid Columns="2" Rows="1">
+                <Label x:Name="MinRoomsLabel" Content="Мин: 500" Style="{StaticResource Paragraph}"/>
+                <Label x:Name="MaxRoomsLabel" Content="Макс: 500" Style="{StaticResource Paragraph}"/>
+            </UniformGrid>
+        </TextBlock>
+        <TextBlock>
+            <Label Content="Этаж" Style="{StaticResource Paragraph}" x:Name="FloorLabel"/>
+            <UniformGrid Columns="2" Rows="1">
+                <Label x:Name="MinFloorsLabel" Content="Мин: 500" Style="{StaticResource Paragraph}"/>
+                <Label x:Name="MaxFloorsLabel" Content="Макс: 500" Style="{StaticResource Paragraph}"/>
+            </UniformGrid>
+        </TextBlock>
+        <StackPanel x:Name="ToolBar">
+            <Rectangle Style="{DynamicResource ESplitter}" Margin="20,0,20,0"/>
+            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft">
+                <buttons:EStatusButton Click="EditButton_Click" x:Name="EditButton" Content="Редактировать" Style="{DynamicResource Status Button}"/>
+                <buttons:EStatusButton Click="DeleteButton_Click" x:Name="DeleteButton" Margin="-5,0,0,0" Content="Удалить" EStatus="Danger" Style="{DynamicResource Status Button}"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="FindBar">
+            <Rectangle Style="{DynamicResource ESplitter}" Margin="20,0,20,0"/>
+            <buttons:EButton x:Name="FindDemandButton" HorizontalAlignment="Right" Content="Найти предложение" Style="{DynamicResource Primary Button}" Click="FindDemandButton_Click"/>
+        </StackPanel>
+    </StackPanel>
+</main:EUserWindow>

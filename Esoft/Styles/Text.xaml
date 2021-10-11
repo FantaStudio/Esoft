@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Esoft" 
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <FontFamily x:Key="RobotoB">pack://application:,,,/Esoft;component/Resources/fonts/#Roboto Bold</FontFamily>
+    <FontFamily x:Key="RobotoI">pack://application:,,,/Esoft;component/Resources/fonts/#Roboto Italic</FontFamily>
+    <FontFamily x:Key="RobotoL">pack://application:,,,/Esoft;component/Resources/fonts/#Roboto Light</FontFamily>
+    <FontFamily x:Key="RobotoM">pack://application:,,,/Esoft;component/Resources/fonts/#Roboto Medium</FontFamily>
+    <FontFamily x:Key="Roboto">pack://application:,,,/Esoft;component/Resources/fonts/#Roboto Regular</FontFamily>
+    <FontFamily x:Key="RobotoT">pack://application:,,,/Esoft;component/Resources/fonts/#Roboto Thin</FontFamily>
+
+    <sys:Double x:Key="H1">24</sys:Double>
+    <sys:Double x:Key="H2">18</sys:Double>
+    <sys:Double x:Key="H3">16</sys:Double>
+    <sys:Double x:Key="H4">14</sys:Double>
+    <sys:Double x:Key="H5">12</sys:Double>
+
+    <Style TargetType="{x:Type Control}" x:Key="Header" BasedOn="{StaticResource ElementBase}">
+        <Setter Property="FontFamily" Value="{DynamicResource RobotoB}"/>
+        <Setter Property="FontSize" Value="{DynamicResource H3}" />
+        <Setter Property="Foreground" Value="{DynamicResource Primary}" />
+    </Style>
+    <Style TargetType="{x:Type Control}" x:Key="Paragraph" BasedOn="{StaticResource ElementBase}">
+        <Setter Property="FontFamily" Value="{DynamicResource Roboto}"/>
+        <Setter Property="FontSize" Value="{DynamicResource H3}" />
+        <Setter Property="Foreground" Value="{DynamicResource Text Paragraph}" />
+    </Style>
+    <Style TargetType="{x:Type Hyperlink}" x:Key="EHyperLink">
+        <Setter Property="FontFamily" Value="{DynamicResource Roboto}"/>
+        <Setter Property="FontSize" Value="{DynamicResource H3}" />
+        <Setter Property="Foreground" Value="{DynamicResource Text Paragraph}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource Grey_4}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
