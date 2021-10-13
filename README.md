@@ -14,3 +14,9 @@ ____
 **Стоимость услуг или комиссия** - количество денег, которое должен заплатить клиент за оказанные ему компанией услуги.  
 
 Как пользоваться программой описано в файле "Руководство пользователя.doc"
+
+# Картинки
+![image](https://user-images.githubusercontent.com/33997732/137150334-aaf0e78c-3964-4b66-bdd3-1c367c7a5b2c.png)
+![image](https://user-images.githubusercontent.com/33997732/137150403-f75de983-2f5a-431d-a040-8588dbcdb14f.png)
+![image](https://user-images.githubusercontent.com/33997732/137150571-d54dc9a9-3d0d-4e3d-93df-9ff94b517715.png)
+
